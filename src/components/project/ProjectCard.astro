@@ -30,7 +30,12 @@ const {
   <div class="flex gap-2">
     {
       technologies?.map((technology) => (
-        <a class="tooltip" data-tip={technology.name} href={technology.url} target="_blank">
+        <a
+          class="tooltip"
+          data-tip={technology.name}
+          href={technology.url}
+          target="_blank"
+        >
           <figure>
             <img src={technology.img} alt={technology.name} class="w-6 h-6" />
           </figure>
@@ -41,7 +46,8 @@ const {
   <div class="card-actions justify-end">
     <div class="indicator tooltip" data-tip={isPublic ? "Publico" : "Privado"}>
       <a
-        href={url} target="_blank"
+        href={url}
+        target="_blank"
         class="mt-1 btn btn-md bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:animate-[bounce_1s_ease-in-out_infinite] hover:cursor-pointer duration-300"
       >
         Mostrar más
@@ -57,4 +63,13 @@ const {
       >{dateStart}{"->"}{dateEnd ?? "Presente"}</span
     >
   </div>
+  {
+    workingAt && (
+      <div class="indicator absolute left-9 bottom-8 animate-[pulse_5s_ease-in-out_infinite]">
+        <span class="indicator-item badge badge-primary font-bold">
+          En desarrollo
+        </span>
+      </div>
+    )
+  }
 </div>
