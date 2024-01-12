@@ -1,0 +1,218 @@
+---
+import TecnologiesList from "./tecnologies/TecnologiesList.vue";
+import WebTecnologiesItems from "./tecnologies/WebTecnologiesItems.js";
+import IATecnologiesItems from "./tecnologies/IATecnologiesItems.js";
+import Timeline from "./Timeline.astro";
+import Email from "./Email.astro";
+import WorkingAs from "./WorkingAs.astro";
+import Hero from "./Hero.astro";
+
+const email = "adriancolomp@gmail.com";
+
+const boxStyleClass =
+  "rounded-3xl p-8 hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500 items-center justify-around -inset-1 bg-gradient-to-b from-base-100 to-base-200";
+---
+
+<section class="flex items-center justify-center min-h-screen">
+  <div class="container my-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-3">
+      <!-- ANCHOR Sección de Información Personal -->
+      <section
+        id="home"
+        class=`col-span-1 md:col-span-10 row-span-3 flex flex-col md:flex-row ${boxStyleClass} scroll-margin-id`
+      >
+        <Hero />
+      </section>
+
+      <!-- ANCHOR Sección de Trabajo -->
+      <section
+        class=`col-span-1 md:row-span-2 md:col-start-11 md:col-span-2 flex flex-col md:flex-row ${boxStyleClass}`
+      >
+        <WorkingAs />
+      </section>
+
+      <!-- ANCHOR Sección de Ubicación -->
+      <section
+        class=`col-span-1 md:col-start-11 md:col-span-2 md:row-start-3 flex flex-col md:flex-row ${boxStyleClass}`
+      >
+        <div class="text-3xl font-extrabold">
+          <div class="indicator">
+            <h1 class="text-center">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+              >
+                España
+              </span>
+              <span class="indicator-item">
+                <img src="/spain.svg" alt="España" class="w-8 rounded-sm" />
+              </span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANCHOR Sección de Rol -->
+      <section
+        class=`col-span-1 md:row-span-2 md:col-start-1 md:col-span-2 md:row-start-4 flex flex-col md:flex-row ${boxStyleClass}`
+      >
+        <div class="text-4xl font-extrabold text-center md:text-left">
+          <h1 class="text-center">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+            >
+              Fullstack Developer
+            </span>
+          </h1>
+        </div>
+      </section>
+
+      <!-- ANCHOR Sección de Tecnologías -->
+      <section
+        class=`col-span-1 md:col-span-10 md:row-span-2 md:col-start-3 md:row-start-4 ${boxStyleClass}`
+      >
+        <h1 class="text-2xl font-extrabold">
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+          >
+            Tecnologías web
+          </span>
+        </h1>
+        <div class="flex items-center justify-center flex-wrap mt-3">
+          <TecnologiesList icons={WebTecnologiesItems} />
+        </div>
+      </section>
+
+      <!-- ANCHOR Sección de Estudiante -->
+      <section
+        class=`col-span-1 md:row-span-2 md:col-start-11 md:col-span-2 flex flex-col md:flex-row ${boxStyleClass}`
+      >
+        <div class="text-4xl font-extrabold text-center md:text-left">
+          <h1 class="text-center">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+            >
+              Big data and IA estudent
+            </span>
+          </h1>
+        </div>
+      </section>
+
+      <!-- ANCHOR Sección de Tecnologías -->
+      <section
+        class=`col-span-1 md:col-span-10 md:row-span-2 md:col-start-1 md:row-start-6 ${boxStyleClass}`
+      >
+        <h1 class="text-2xl font-extrabold">
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+          >
+            Tecnologías IA
+          </span>
+        </h1>
+        <div class="flex items-center justify-center flex-wrap mt-3">
+          <TecnologiesList icons={IATecnologiesItems} />
+        </div>
+      </section>
+
+      <!-- ANCHOR Sección de Proyectos -->
+      <section
+        id="projects"
+        class=`col-span-1 md:col-span-12 flex flex-col md:flex-row ${boxStyleClass} scroll-margin-id`
+      >
+        <div class="text-4xl font-extrabold text-center md:text-left">
+          <h1 class="text-center">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+            >
+              Proyectos
+            </span>
+          </h1>
+        </div>
+      </section>
+
+      <article
+        class=`col-span-1 md:col-span-4 md:col-start-1 shadow-lg rounded-3xl bg-gradient-to-b from-base-100 to-base-200 card hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500`
+      >
+        <figure>
+          <img
+            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            alt="Shoes"
+          />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Shoes!</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class=`col-span-1 md:col-span-4 md:col-start-5 flex ${boxStyleClass}`
+      >
+        <div class="text-3xl font-extrabold">
+          <div class="indicator">
+            <p class="text-center">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+              >
+                Proyecto 2
+              </span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class=`col-span-1 md:col-span-4 md:col-start-9 flex ${boxStyleClass}`
+      >
+        <div class="text-3xl font-extrabold">
+          <div class="indicator">
+            <p class="text-center">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+              >
+                Proyecto 3
+              </span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <section
+        class="col-span-1 md:col-span-12 flex flex-col p-8 items-center justify-center -inset-1"
+      >
+        <a
+          class="mt-1 btn btn-xl bg-gradient-to-r from-accent to-info text-black text-lg font-bold rounded-full hover:animate-bounce hover:cursor-pointer duration-300"
+        >
+          Mostrar más
+        </a>
+      </section>
+
+      <!-- ANCHOR Sección de Metas -->
+      <section
+        id="timeline"
+        class=`col-span-1 md:col-span-12 md:flex md:flex-col ${boxStyleClass} scroll-margin-id`
+      >
+        <div class="text-4xl font-extrabold text-center md:text-left">
+          <h1 class="text-center">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+            >
+              Estudios, objetivos y metas
+            </span>
+          </h1>
+        </div>
+        <Timeline />
+      </section>
+
+      <!-- ANCHOR Sección email -->
+      <section
+        id="contact"
+        class=`col-span-1 md:col-span-12 md:flex md:flex-col ${boxStyleClass} scroll-margin-id`
+      >
+        <Email email={email} />
+      </section>
+    </div>
+  </div>
+</section>
