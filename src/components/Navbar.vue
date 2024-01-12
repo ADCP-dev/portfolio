@@ -46,7 +46,7 @@ onMounted(() => {
                         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-gradient-to-r from-accent to-info font-bold text-lg">
                         <li><a href="#home">Inicio</a></li>
                         <li><a href="#projects">Proyectos</a></li>
-                        <li><a href="#timeline">Linea de tiempo</a></li>
+                        <!-- <li><a href="#timeline">Linea de tiempo</a></li> -->
                         <li><a href="#contact">Contacto</a></li>
                         <!-- <li>
                             <a>Parent</a>
@@ -81,7 +81,7 @@ onMounted(() => {
                             </div>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#timeline">
                             <div class="font-bold group transition-all duration-300 ease-in-out text-black">
                                 <span
@@ -90,7 +90,7 @@ onMounted(() => {
                                 </span>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#contact">
                             <div class="font-bold group transition-all duration-300 ease-in-out text-black">
