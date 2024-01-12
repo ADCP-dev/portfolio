@@ -7,9 +7,9 @@ let props = defineProps({
 </script>
 <template>
     <template v-for="icon in props.icons" :key="icon">
-        <article class="mx-3 my-2">
-            <div class="indicator">
-                <img :src="icon.url" :alt="icon.name" class="w-12 h-12 m-4">
+        <div class="mx-3 my-2 tooltip" :data-tip="icon.name">
+            <a class="indicator" :href="icon.url" target="_blank">
+                <img :src="icon.img" :alt="icon.name" class="w-12 h-12 m-4">
                 <span v-if="icon.favourite" class="indicator-item indicator-bottom" aria-label="Favourite">
                     <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor" viewBox="0 0 22 20">
@@ -21,8 +21,8 @@ let props = defineProps({
                     aria-label="Experience">
                     {{ icon.experience }}
                 </span>
-            </div>
+            </a>
             <p class="text-1xl font-extrabold text-center">{{ icon.name }}</p>
-        </article>
+        </div>
     </template>
 </template>
