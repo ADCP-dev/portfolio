@@ -6,16 +6,17 @@ import Timeline from "./Timeline.astro";
 import Email from "./Email.astro";
 import WorkingAs from "./WorkingAs.astro";
 import Hero from "./Hero.astro";
+import Projects from "./project/Projects.astro";
 
 const email = "adriancolomp@gmail.com";
 
 const boxStyleClass =
-  "rounded-3xl p-8 hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500 items-center justify-around -inset-1 bg-gradient-to-b from-base-100 to-base-200";
+  "rounded-3xl p-8 hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500 items-center justify-around -inset-1 bg-gradient-to-b from-base-100 to-base-300";
 ---
 
 <section class="flex items-center justify-center min-h-screen">
   <div class="container my-24">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-3">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-5 mt-3">
       <!-- ANCHOR Sección de Información Personal -->
       <section
         id="home"
@@ -91,7 +92,7 @@ const boxStyleClass =
             <span
               class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
             >
-              Big data and IA estudent
+              Estudiando IA & Big Data
             </span>
           </h1>
         </div>
@@ -129,65 +130,7 @@ const boxStyleClass =
         </div>
       </section>
 
-      <article
-        class=`col-span-1 md:col-span-4 md:col-start-1 shadow-lg rounded-3xl bg-gradient-to-b from-base-100 to-base-200 card hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500`
-      >
-        <figure>
-          <img
-            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-          />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
-      </article>
-
-      <article
-        class=`col-span-1 md:col-span-4 md:col-start-5 flex ${boxStyleClass}`
-      >
-        <div class="text-3xl font-extrabold">
-          <div class="indicator">
-            <p class="text-center">
-              <span
-                class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
-              >
-                Proyecto 2
-              </span>
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article
-        class=`col-span-1 md:col-span-4 md:col-start-9 flex ${boxStyleClass}`
-      >
-        <div class="text-3xl font-extrabold">
-          <div class="indicator">
-            <p class="text-center">
-              <span
-                class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
-              >
-                Proyecto 3
-              </span>
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <section
-        class="col-span-1 md:col-span-12 flex flex-col p-8 items-center justify-center -inset-1"
-      >
-        <a
-          class="mt-1 btn btn-xl bg-gradient-to-r from-accent to-info text-black text-lg font-bold rounded-full hover:animate-bounce hover:cursor-pointer duration-300"
-        >
-          Mostrar más
-        </a>
-      </section>
+      <Projects boxStyleClass={boxStyleClass} />
 
       <!-- ANCHOR Sección de Metas -->
       <section

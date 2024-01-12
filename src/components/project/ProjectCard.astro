@@ -1,0 +1,59 @@
+---
+import type { ProjectProps } from "./ProjectProps";
+import EyeIcon from "../icons/EyeIcon.astro";
+import EyeSlashIcon from "../icons/EyeSlashIcon.astro";
+
+const {
+  title,
+  description,
+  technologies,
+  dateStart,
+  dateEnd,
+  workingAt,
+  url,
+  img,
+  public: isPublic,
+} = Astro.props as ProjectProps;
+---
+
+<figure>
+  <img
+    src={img ??
+      "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"}
+    alt="Project image"
+  />
+</figure>
+<div class="card-body">
+  <h2 class="card-title">{title}</h2>
+  <p>{description}</p>
+  <p class="text-sm">Tecnologías:</p>
+  <div class="flex gap-2">
+    {
+      technologies?.map((technology) => (
+        <a class="tooltip" data-tip={technology.name} href={technology.url} target="_blank">
+          <figure>
+            <img src={technology.img} alt={technology.name} class="w-6 h-6" />
+          </figure>
+        </a>
+      ))
+    }
+  </div>
+  <div class="card-actions justify-end">
+    <div class="indicator tooltip" data-tip={isPublic ? "Publico" : "Privado"}>
+      <a
+        class="mt-1 btn btn-md bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:animate-[bounce_1s_ease-in-out_infinite] hover:cursor-pointer duration-300"
+      >
+        Mostrar más
+      </a>
+      <span
+        class=`indicator-item badge ${isPublic ? "badge-success" : "badge-error"}`
+        >{isPublic ? <EyeIcon /> : <EyeSlashIcon />}</span
+      >
+    </div>
+  </div>
+  <div class="indicator absolute left-9 bottom-14">
+    <span class="indicator-item badge badge-accent font-bold"
+      >{dateStart}{"->"}{dateEnd ?? "Presente"}</span
+    >
+  </div>
+</div>

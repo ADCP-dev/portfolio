@@ -1,0 +1,111 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import type { ProjectProps } from "./ProjectProps";
+
+interface Props {
+  boxStyleClass: string;
+}
+
+const { boxStyleClass } = Astro.props;
+
+const projects : ProjectProps[] = [
+  {
+    title: "Administracion academia de música",
+    description: "Clases, alumnos, horarios, calendario, tareas, pagos, etc.",
+    technologies: [
+      {
+        name: "Laravel",
+        url: "https://laravel.com/",
+        img: "/tecnologies/web/laravel.svg",
+      },
+      {
+        name: "Vue3",
+        url: "https://vuejs.org/",
+        img: "/tecnologies/web/vue.png",
+      },
+      {
+        name: "PrimeVue",
+        url: "https://primevue.org/",
+        img: "/tecnologies/web/primevue.png",
+      },
+      {
+        name: "InertiaJS",
+        url: "https://inertiajs.com/",
+        img: "/tecnologies/web/inertia.png",
+      },
+    ],
+    dateStart: "2023",
+    dateEnd: "Presente",
+    workingAt: true,
+    url: "https://admin.academiacdemia.com/",
+    img: "/projects/A2CP.jpg",
+    public: false,
+  },
+  {
+    title: "Portfolio v1",
+    description: "Proyecto de mi portfolio",
+    technologies: [
+      {
+        name: "Astro",
+        url: "https://astro.build/",
+        img: "/tecnologies/web/astro.png",
+      },
+      {
+        name: "Tailwind",
+        url: "https://tailwindcss.com/",
+        img: "/tecnologies/web/tailwind.webp",
+      },
+      {
+        name: "DaisyUI",
+        url: "https://daisyui.com/",
+        img: "/tecnologies/web/daisyUI.png",
+      },
+      {
+        name: "Vue3",
+        url: "https://vuejs.org/",
+        img: "/tecnologies/web/vue.png",
+      },
+    ],
+    dateStart: "2024",
+    dateEnd: "2024",
+    workingAt: false,
+    url: "#",
+    img: "/projects/portfolio.jpg",
+    public: true,
+  },
+];
+---
+
+<article
+  class=`col-span-1 md:col-span-4 md:col-start-1 shadow-lg rounded-3xl bg-gradient-to-b from-base-100 to-base-200 card hover:shadow-[5px_5px_0px_0px] hover:shadow-primary duration-500`
+>
+  <ProjectCard {...projects[0]} />
+</article>
+
+<article class=`col-span-1 md:col-span-4 md:col-start-5 shadow-lg rounded-3xl bg-gradient-to-b from-base-100 to-base-200 card hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500`>
+  <ProjectCard {...projects[1]} />
+</article>
+
+<article class=`col-span-1 md:col-span-4 md:col-start-9 flex ${boxStyleClass}`>
+  <div class="text-3xl font-extrabold">
+    <div class="indicator">
+      <p class="text-center">
+        <span
+          class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info animate-[pulse_5s_ease-in-out_infinite]"
+        >
+          Próximamente
+        </span>
+      </p>
+    </div>
+  </div>
+</article>
+
+<!-- <section
+  class="col-span-1 md:col-span-12 flex flex-col p-8 items-center justify-center -inset-1"
+>
+  <a
+    class="mt-1 btn btn-xl bg-gradient-to-r from-accent to-info text-black text-lg font-bold rounded-full hover:animate-bounce hover:cursor-pointer duration-300"
+  >
+    Mostrar más
+  </a>
+</section> -->
