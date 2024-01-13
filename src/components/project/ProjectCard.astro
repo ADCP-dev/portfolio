@@ -58,18 +58,16 @@ const {
       >
     </div>
   </div>
-  <div class="indicator absolute md:left-9 left-20 bottom-16">
+  <div class="indicator absolute md:left-9 left-20 bottom-[4.2rem]">
     <span class="indicator-item badge badge-accent font-bold"
       >{dateStart}{"->"}{dateEnd ?? "Presente"}</span
     >
   </div>
-  {
-    workingAt && (
-      <div class="indicator absolute md:left-9 left-20 bottom-10 animate-[pulse_5s_ease-in-out_infinite]">
-        <span class="indicator-item badge badge-primary font-bold">
-          En desarrollo
-        </span>
-      </div>
-    )
-  }
+  <div
+    class=`indicator absolute md:left-9 left-20 bottom-10 ${workingAt ? "animate-[pulse_5s_linear_infinite]" : ""}`
+  >
+    <span class=`indicator-item badge badge-${workingAt ? "primary" : "secondary"} font-bold`>
+      {workingAt ? "En desarrollo" : "Finalizado"}
+    </span>
+  </div>
 </div>
