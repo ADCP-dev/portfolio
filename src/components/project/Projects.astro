@@ -1,84 +1,12 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-import type { ProjectProps } from "./ProjectProps";
-
+import { projects } from "./ProjectsData";
 interface Props {
   boxStyleClass: string;
 }
 
 const { boxStyleClass } = Astro.props;
 
-const projects : ProjectProps[] = [
-  {
-    title: "Administracion academia de música",
-    description: "Clases, alumnos, horarios, calendario, tareas, pagos, etc.",
-    technologies: [
-      {
-        name: "Laravel",
-        url: "https://laravel.com/",
-        img: "/tecnologies/web/laravel.svg",
-      },
-      {
-        name: "Vue3",
-        url: "https://vuejs.org/",
-        img: "/tecnologies/web/vue.png",
-      },
-      {
-        name: "PrimeVue",
-        url: "https://primevue.org/",
-        img: "/tecnologies/web/primevue.png",
-      },
-      {
-        name: "InertiaJS",
-        url: "https://inertiajs.com/",
-        img: "/tecnologies/web/inertia.png",
-      },
-      {
-        name: "Tailwind",
-        url: "https://tailwindcss.com/",
-        img: "/tecnologies/web/tailwind.webp",
-      },
-    ],
-    dateStart: "2023",
-    dateEnd: "Presente",
-    workingAt: true,
-    url: "https://adcpprojects.com/",
-    img: "/projects/A2CP.jpg",
-    public: false,
-  },
-  {
-    title: "Portfolio v1",
-    description: "Proyecto de mi portfolio hecho con astro, tailwind y Vue.",
-    technologies: [
-      {
-        name: "Astro",
-        url: "https://astro.build/",
-        img: "/tecnologies/web/astro.png",
-      },
-      {
-        name: "Tailwind",
-        url: "https://tailwindcss.com/",
-        img: "/tecnologies/web/tailwind.webp",
-      },
-      {
-        name: "DaisyUI",
-        url: "https://daisyui.com/",
-        img: "/tecnologies/web/daisyUI.png",
-      },
-      {
-        name: "Vue3",
-        url: "https://vuejs.org/",
-        img: "/tecnologies/web/vue.png",
-      },
-    ],
-    dateStart: "2024",
-    dateEnd: "2024",
-    workingAt: false,
-    url: "#",
-    img: "/projects/portfolio.jpg",
-    public: true,
-  },
-];
 ---
 
 <article

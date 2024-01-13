@@ -1,12 +1,21 @@
+import python from '../../img/tecnologies/IA/python.svg';
+import matplotlib from '../../img/tecnologies/IA/matplotlib.svg';
+import numpy from '../../img/tecnologies/IA/numpy.svg';
+import pandas from '../../img/tecnologies/IA/pandas.svg';
+import tensorflow from '../../img/tecnologies/IA/tensorflow.svg';
+import scikit_learn from '../../img/tecnologies/IA/scikit_learn.svg';
+import seaborn from '../../img/tecnologies/IA/sns.svg';
+import plotly from '../../img/tecnologies/IA/plotly.webp';
+import aws from '../../img/tecnologies/IA/aws.svg';
 
 export default [
-  { name: 'Python', img: "/tecnologies/IA/python.svg", url: "https://www.python.org" },
-  { name: 'Matplotlib', img: "/tecnologies/IA/matplotlib.svg", url: "https://matplotlib.org" },
-  { name: 'Numpy', img: "/tecnologies/IA/numpy.svg", url: "https://numpy.org" },
-  { name: 'Pandas', img: "/tecnologies/IA/pandas.svg", url: "https://pandas.pydata.org" },
-  { name: 'Tensorflow', img: "/tecnologies/IA/tensorflow.svg", url: "https://www.tensorflow.org" },
-  { name: 'Scikit-Learn', img: "/tecnologies/IA/scikit_learn.svg", favourite: true, url: "https://scikit-learn.org" },
-  { name: 'Seaborn', img: "/tecnologies/IA/sns.svg", url: "https://seaborn.pydata.org" },
-  { name: 'Plotly', img: "/tecnologies/IA/plotly.webp", url: "https://plotly.com" },
-  { name: 'AWS', img: "/tecnologies/IA/aws.svg", url: "https://aws.amazon.com" },
+  { name: 'Python', img: python.src, url: "https://www.python.org" },
+  { name: 'Matplotlib', img: matplotlib.src, url: "https://matplotlib.org" },
+  { name: 'Numpy', img: numpy.src, url: "https://numpy.org" },
+  { name: 'Pandas', img: pandas.src, url: "https://pandas.pydata.org" },
+  { name: 'Tensorflow', img: tensorflow.src, url: "https://www.tensorflow.org" },
+  { name: 'Scikit-Learn', img: scikit_learn.src, favourite: true, url: "https://scikit-learn.org" },
+  { name: 'Seaborn', img: seaborn.src, url: "https://seaborn.pydata.org" },
+  { name: 'Plotly', img: plotly.src, url: "https://plotly.com" },
+  { name: 'AWS', img: aws.src, url: "https://aws.amazon.com" },
 ]

@@ -10,6 +10,8 @@ import Projects from "./project/Projects.astro";
 
 const email = "adriancolomp@gmail.com";
 
+import spainImage from "../img/spain.svg"
+
 const boxStyleClass =
   "rounded-3xl p-8 hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500 items-center justify-around -inset-1 bg-gradient-to-b from-base-100 to-base-300";
 ---
@@ -45,7 +47,7 @@ const boxStyleClass =
                 España
               </span>
               <span class="indicator-item">
-                <img src="/spain.svg" alt="España" class="w-8 rounded-sm" />
+                <img src={spainImage.src} alt="España" class="w-8 rounded-sm" />
               </span>
             </h1>
           </div>
