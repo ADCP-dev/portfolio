@@ -43,7 +43,7 @@ const {
       ))
     }
   </div>
-  <div class="card-actions justify-end">
+  <div class="card-actions justify-end mt-1">
     <div class="indicator tooltip" data-tip={isPublic ? "Publico" : "Privado"}>
       <a
         href={url}
@@ -58,14 +58,14 @@ const {
       >
     </div>
   </div>
-  <div class="indicator absolute left-9 bottom-14">
+  <div class="indicator absolute md:left-9 left-20 bottom-16">
     <span class="indicator-item badge badge-accent font-bold"
       >{dateStart}{"->"}{dateEnd ?? "Presente"}</span
     >
   </div>
   {
     workingAt && (
-      <div class="indicator absolute left-9 bottom-8 animate-[pulse_5s_ease-in-out_infinite]">
+      <div class="indicator absolute md:left-9 left-20 bottom-10 animate-[pulse_5s_ease-in-out_infinite]">
         <span class="indicator-item badge badge-primary font-bold">
           En desarrollo
         </span>
