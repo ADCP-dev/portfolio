@@ -66,7 +66,7 @@ const {
   <div
     class=`indicator absolute md:left-9 left-20 bottom-10 ${workingAt ? "animate-[pulse_5s_linear_infinite]" : ""}`
   >
-    <span class=`indicator-item badge badge-${workingAt ? "primary" : "secondary"} font-bold`>
+    <span class=`indicator-item badge ${workingAt ? "badge-primary" : "badge-secondary"} font-bold`>
       {workingAt ? "En desarrollo" : "Finalizado"}
     </span>
   </div>
