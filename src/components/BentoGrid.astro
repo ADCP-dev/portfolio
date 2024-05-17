@@ -1,8 +1,10 @@
 ---
 import TecnologiesList from "./tecnologies/TecnologiesList.vue";
-import WebTecnologiesItems from "./tecnologies/WebTecnologiesItems.js";
+import WebBackTecnologiesItems from "./tecnologies/web/WebBackTecnologiesItems.js";
+import WebFrontTecnologiesItems from "./tecnologies/web/WebFrontTecnologiesItems";
+import WebUtilsTecnologiesItems from "./tecnologies/web/WebUtilsTecnologiesItems";
 import IATecnologiesItems from "./tecnologies/IATecnologiesItems.js";
-import Timeline from "./Timeline.astro";
+import Timeline from "./timelines/Timeline.astro";
 import Email from "./Email.astro";
 import WorkingAs from "./WorkingAs.astro";
 import Hero from "./Hero.astro";
@@ -10,10 +12,12 @@ import Projects from "./project/Projects.astro";
 
 const email = "adriancolomp@gmail.com";
 
-import spainImage from "../img/spain.svg"
+import spainImage from "../img/spain.svg";
 
 const boxStyleClass =
   "rounded-3xl p-8 hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500 items-center justify-around -inset-1 bg-gradient-to-b from-base-100 to-base-300";
+
+const years = (new Date().getFullYear() - 2003).toString();
 ---
 
 <section class="flex items-center justify-center min-h-screen">
@@ -56,7 +60,7 @@ const boxStyleClass =
 
       <!-- ANCHOR Sección de Rol -->
       <section
-        class=`col-span-1 md:row-span-2 md:col-start-1 md:col-span-2 md:row-start-4 flex flex-col md:flex-row ${boxStyleClass}`
+        class=`col-span-1 md:row-span-1 md:col-start-1 md:col-span-2 md:row-start-4 flex flex-col md:flex-row ${boxStyleClass}`
       >
         <div class="text-4xl font-extrabold text-center md:text-left">
           <h1 class="text-center">
@@ -69,19 +73,77 @@ const boxStyleClass =
         </div>
       </section>
 
+      <section
+        class=`col-span-1 md:row-span-1 md:col-start-1 md:col-span-2 md:row-start-5 flex flex-col md:flex-row ${boxStyleClass}`
+      >
+        <div class="text-4xl font-extrabold text-center md:text-left">
+          <h1 class="text-center">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+            >
+              {years} Años
+            </span>
+          </h1>
+        </div>
+      </section>
+
       <!-- ANCHOR Sección de Tecnologías -->
       <section
-        class=`col-span-1 md:col-span-10 md:row-span-2 md:col-start-3 md:row-start-4 ${boxStyleClass}`
+        class=`col-span-1 md:col-span-4 md:row-span-2 md:col-start-3 md:row-start-4 ${boxStyleClass}`
       >
         <h1 class="text-2xl font-extrabold">
           <span
             class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
           >
-            Tecnologías web
+            Tecnologías Frontend
           </span>
         </h1>
         <div class="flex items-center justify-center flex-wrap mt-3">
-          <TecnologiesList icons={WebTecnologiesItems} />
+          <TecnologiesList icons={WebFrontTecnologiesItems} />
+        </div>
+      </section>
+
+      <section
+        class=`col-span-1 md:col-span-3 md:row-span-2 md:col-start-10 md:row-start-4 ${boxStyleClass}`
+      >
+        <h1 class="text-2xl font-extrabold">
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+          >
+            Backend
+          </span>
+        </h1>
+        <div class="flex items-center justify-center flex-wrap mt-3">
+          <TecnologiesList icons={WebBackTecnologiesItems} />
+        </div>
+      </section>
+
+      <section
+        class=`col-span-1 md:col-span-3 md:row-span-1 md:col-start-7 md:row-start-4 ${boxStyleClass}`
+      >
+        <h1 class="text-2xl font-extrabold">
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+          >
+            Herramientas
+          </span>
+        </h1>
+        <div class="flex items-center justify-center flex-wrap">
+          <TecnologiesList icons={WebUtilsTecnologiesItems} />
+        </div>
+      </section>
+
+      <section
+        class=`col-span-1 md:col-span-3 md:row-span-1 md:col-start-7 md:row-start-5 ${boxStyleClass}`
+      >
+        <div class="text-3xl font-extrabold text-center md:text-left">
+          <h1 class="text-center">🥇
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+            >
+               BalearSkills
+            </span>
+          </h1>
         </div>
       </section>
 
@@ -89,15 +151,15 @@ const boxStyleClass =
       <section
         class=`col-span-1 md:row-span-2 md:col-start-11 md:col-span-2 flex flex-col md:flex-row ${boxStyleClass}`
       >
-        <div class="text-4xl font-extrabold text-center md:text-left">
-          <h1 class="text-center">
-            <span
-              class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
-            >
-              Estudiando IA & Big Data
-            </span>
-          </h1>
-        </div>
+      <div class="text-4xl font-extrabold text-center md:text-left">
+        <h1 class="text-center">
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+          >
+            Estudiante IA & Big Data
+          </span>
+        </h1>
+      </div>
       </section>
 
       <!-- ANCHOR Sección de Tecnologías -->
@@ -108,7 +170,7 @@ const boxStyleClass =
           <span
             class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
           >
-            Tecnologías IA
+            Tecnologías IA, Big Data y Machine Learning
           </span>
         </h1>
         <div class="flex items-center justify-center flex-wrap mt-3">
@@ -135,11 +197,11 @@ const boxStyleClass =
       <Projects boxStyleClass={boxStyleClass} />
 
       <!-- ANCHOR Sección de Metas -->
-      <!-- <section
+      <section
         id="timeline"
         class=`col-span-1 md:col-span-12 md:flex md:flex-col ${boxStyleClass} scroll-margin-id`
       >
-        <div class="text-4xl font-extrabold text-center md:text-left">
+        <div class="text-4xl font-extrabold text-center md:text-left mb-3">
           <h1 class="text-center">
             <span
               class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
@@ -149,7 +211,7 @@ const boxStyleClass =
           </h1>
         </div>
         <Timeline />
-      </section> -->
+      </section>
 
       <!-- ANCHOR Sección email -->
       <section

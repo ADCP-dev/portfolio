@@ -7,13 +7,16 @@ import scikit_learn from '../../img/tecnologies/IA/scikit_learn.svg';
 import seaborn from '../../img/tecnologies/IA/sns.svg';
 import plotly from '../../img/tecnologies/IA/plotly.webp';
 import aws from '../../img/tecnologies/IA/aws.svg';
+import kafka from '../../img/tecnologies/IA/kafka.png';
+import grafana from '../../img/tecnologies/IA/grafana.png';
+
 
 export default [
-  { name: 'Python', img: python.src, url: "https://www.python.org" },
-  { name: 'Matplotlib', img: matplotlib.src, url: "https://matplotlib.org" },
   { name: 'Numpy', img: numpy.src, url: "https://numpy.org" },
   { name: 'Pandas', img: pandas.src, url: "https://pandas.pydata.org" },
   { name: 'Tensorflow', img: tensorflow.src, url: "https://www.tensorflow.org" },
+  { name: 'Kafka', img: kafka.src, url: "https://kafka.apache.org/" },
+  { name: 'Grafana', img: grafana.src, url: "https://grafana.com" },
   { name: 'Scikit-Learn', img: scikit_learn.src, favourite: true, url: "https://scikit-learn.org" },
   { name: 'Seaborn', img: seaborn.src, url: "https://seaborn.pydata.org" },
   { name: 'Plotly', img: plotly.src, url: "https://plotly.com" },

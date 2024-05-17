@@ -20,7 +20,9 @@ const {
   <img
     src={img ??
       "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"}
-    alt="Project image"
+    alt={title}
+    onmouseenter="this.src = 'https://media1.tenor.com/m/bfqp5V5PgXQAAAAC/download-failed.gif'"
+    onmouseleave={`this.src = '${img}'`}
   />
 </figure>
 <div class="card-body">
@@ -48,7 +50,7 @@ const {
       <a
         href={url}
         target="_blank"
-        class="mt-1 btn btn-md bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:animate-[bounce_1s_ease-in-out_infinite] hover:cursor-pointer duration-300"
+        class="mt-1 btn btn-md bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:scale-110 hover:cursor-pointer duration-300"
       >
         Mostrar más
       </a>

@@ -1,0 +1,104 @@
+<div>
+  <div id="graph-ES" class="md:overflow-hidden overflow-x-scroll"></div>
+  <div id="graph-GS" class="md:overflow-hidden overflow-x-scroll"></div>
+  <div id="graph-GM" class="md:overflow-hidden overflow-x-scroll"></div>
+</div>
+<script>
+  import { createGitgraph, templateExtend } from "@gitgraph/js";
+
+  // Get the graph container HTML element.
+  const graphContainerGM = document.getElementById("graph-GM");
+  const graphContainerGS = document.getElementById("graph-GS");
+  const graphContainerES = document.getElementById("graph-ES");
+
+  // Instantiate the graph.
+  const options = {
+    template: templateExtend("metro", {
+      colors: ["#00b3f0", "#7582ff", "#00c7b5", "#00b3f0"],
+      commit: {
+        message: {
+          displayAuthor: false,
+          displayHash: false,
+        },
+        dot: {
+          size: 10,
+        },
+      },
+      branch: {
+        mergeStyle: "bezier",
+        lineWidth: 6,
+        spacing: 25,
+      },
+    }),
+  };
+
+  const gitgraphGM = createGitgraph(graphContainerGM, options);
+  const gitgraphGS = createGitgraph(graphContainerGS, options);
+  const gitgraphES = createGitgraph(graphContainerES, options);
+
+  // GM
+
+  // Simulate git commands with Gitgraph API.
+  const master = gitgraphGM.branch("Main");
+  master.commit({
+    subject: "Initial commit. Acabar ESO",
+    onClick: () => console.log("clicked on commit"),
+  });
+
+  const gm = gitgraphGM.branch("GM");
+  gm.commit("2019 - Empezar GM");
+
+  const hpCodewars = gitgraphGM.branch("HPcodewars");
+  hpCodewars.commit("Competición I").commit("Competición II");
+
+  gm.merge(hpCodewars);
+  gm.commit("2021 - Acabar GM");
+  master.merge(gm);
+
+  // GS
+
+  const master2 = gitgraphGS.branch("Main");
+  master2.commit("Initial commit. Acabar GM");
+
+  const gs = gitgraphGS.branch("GS");
+  gs.commit("2021 - Empezar GS");
+
+  const BalearSkills = gs.branch("BalearSkills");
+  BalearSkills.commit("Competición BalearSkills");
+
+  const appAdmin = gs.branch("AppAdmin");
+  appAdmin.commit("2023 - Empezar AppAdmin");
+
+  gs.merge(BalearSkills);
+
+  gs.commit("2023 - Acabar GS");
+
+  master2.merge(gs);
+
+  // ES
+
+  const master3 = gitgraphES.branch("Main");
+  master3.commit("Initial commit. Acabar GS");
+
+  const ia = gitgraphES.branch("IA");
+  ia.commit("2023 - Empezar IA");
+
+  const spain = gitgraphES.branch("SpainSkills");
+  spain.commit("2024 - Competición SpainSkills");
+
+  ia.merge(spain);
+  ia.commit({
+    subject: "2024 - Acabar IA",
+    onClick: () => (document.getElementById("modal_IA").open = true),
+    onMessageClick: () => (document.getElementById("modal_IA").open = true),
+  });
+
+  master3.merge(ia);
+</script>
+<style is:global>
+  /* "Acabar IA" */
+  #graph-ES > svg > g > g:nth-child(2) > g:nth-child(5) > g:nth-child(2) > g:nth-child(1) > text:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+</style>
