@@ -2,6 +2,7 @@
 import type { ProjectProps } from "./ProjectProps";
 import EyeIcon from "../icons/EyeIcon.astro";
 import EyeSlashIcon from "../icons/EyeSlashIcon.astro";
+import ProjectCardModal from "./ProjectCardModal.astro";
 
 const {
   title,
@@ -12,18 +13,22 @@ const {
   workingAt,
   url,
   img,
+  video,
   public: isPublic,
 } = Astro.props as ProjectProps;
 ---
 
 <figure>
-  <img
-    src={img ??
-      "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"}
-    alt={title}
-    onmouseenter="this.src = 'https://media1.tenor.com/m/bfqp5V5PgXQAAAAC/download-failed.gif'"
-    onmouseleave={`this.src = '${img}'`}
-  />
+  <div class="card-preview" onclick={`document.getElementById('${title}').showModal()`} >
+    <img
+      src={img ??
+        "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"}
+      alt={title}
+    />
+    <video autoplay loop muted playsinline>
+      <source src={video} type="video/mp4"/>
+    </video>
+  </div>
 </figure>
 <div class="card-body">
   <h2 class="card-title">{title}</h2>
@@ -47,13 +52,12 @@ const {
   </div>
   <div class="card-actions justify-end mt-1">
     <div class="indicator tooltip" data-tip={isPublic ? "Publico" : "Privado"}>
-      <a
-        href={url}
-        target="_blank"
+      <button
+        onclick={`document.getElementById('${title}').showModal()`}
         class="mt-1 btn btn-md bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:scale-110 hover:cursor-pointer duration-300"
       >
         Mostrar más
-      </a>
+      </button>
       <span
         class=`indicator-item badge ${isPublic ? "badge-success" : "badge-error"}`
         >{isPublic ? <EyeIcon /> : <EyeSlashIcon />}</span
@@ -68,8 +72,48 @@ const {
   <div
     class=`indicator absolute md:left-9 left-20 bottom-10 ${workingAt ? "animate-[pulse_5s_linear_infinite]" : ""}`
   >
-    <span class=`indicator-item badge ${workingAt ? "badge-primary" : "badge-secondary"} font-bold`>
+    <span
+      class=`indicator-item badge ${workingAt ? "badge-primary" : "badge-secondary"} font-bold`
+    >
       {workingAt ? "En desarrollo" : "Finalizado"}
     </span>
   </div>
+  <ProjectCardModal title={title} video={video} description={description} technologies={technologies} url={url} />
 </div>
+
+<style>
+  .card-preview {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .card-preview img,
+  .card-preview source {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .card-preview img, {
+    z-index: 1;
+  }
+
+  .card-preview source {
+    z-index: 0;
+    opacity: 0;
+  }
+
+  .card-preview:hover img {
+    opacity: 0;
+  }
+
+  .card-preview:hover source {
+    opacity: 1;
+    z-index: 1;
+  }
+</style>

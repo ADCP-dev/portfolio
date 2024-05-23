@@ -14,4 +14,5 @@ export interface ProjectProps {
   url: string;
   img: string;
   public: boolean;
+  video: string;
 }

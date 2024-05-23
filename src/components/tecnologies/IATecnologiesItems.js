@@ -19,6 +19,6 @@ export default [
   { name: 'Grafana', img: grafana.src, url: "https://grafana.com" },
   { name: 'Scikit-Learn', img: scikit_learn.src, favourite: true, url: "https://scikit-learn.org" },
   { name: 'Seaborn', img: seaborn.src, url: "https://seaborn.pydata.org" },
-  { name: 'Plotly', img: plotly.src, url: "https://plotly.com" },
-  { name: 'AWS', img: aws.src, url: "https://aws.amazon.com" },
+  // { name: 'Plotly', img: plotly.src, url: "https://plotly.com" },
+  // { name: 'AWS', img: aws.src, url: "https://aws.amazon.com" },
 ]

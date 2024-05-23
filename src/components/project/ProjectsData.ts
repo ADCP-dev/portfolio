@@ -1,7 +1,9 @@
 import type { ProjectProps } from "./ProjectProps";
 
 import portfolio from "../../img/projects/portfolio.jpg";
+import portfolioVideo from "../../img/projects/portfolio.webm";
 import a2cp from "../../img/projects/A2CP.jpg";
+import a2cpVideo from "../../img/projects/A2CP.webm";
 
 import laravel from "../../img/tecnologies/web/laravel.svg";
 import vue from "../../img/tecnologies/web/vue.png";
@@ -10,7 +12,6 @@ import inertia from "../../img/tecnologies/web/inertia.png";
 import tailwind from "../../img/tecnologies/web/tailwind.webp";
 import daisyui from "../../img/tecnologies/web/daisyui.png";
 import astro from "../../img/tecnologies/web/astro.png";
-
 
 export const projects : ProjectProps[] = [
     {
@@ -49,6 +50,7 @@ export const projects : ProjectProps[] = [
       url: "https://adcpprojects.com/",
       img: a2cp.src,
       public: false,
+      video: a2cpVideo 
     },
     {
       title: "Portfolio v1",
@@ -81,5 +83,6 @@ export const projects : ProjectProps[] = [
       url: "#",
       img: portfolio.src,
       public: true,
+      video: portfolioVideo 
     },
   ];

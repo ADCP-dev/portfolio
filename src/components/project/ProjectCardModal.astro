@@ -1,0 +1,46 @@
+---
+const { title, description, technologies, video, url } = Astro.props;
+---
+
+<dialog id={title} class="modal">
+  <div class="modal-box bg-base-200 p-5" style="max-width: 1000px;">
+    <h1 class="font-bold text-2xl text-center dark:text-gray-300">{title}</h1>
+    <p class="py-4 text-center">
+      {description}
+    </p>
+    <div class="flex justify-center items-center p-4">
+      <video controls src={video} class="w-full"></video>
+    </div>
+    <div class="flex justify-between p-4">
+      <div>
+        <p class="text-sm mb-2">Tecnologías:</p>
+        <div class="flex gap-2">
+          {
+            technologies?.map((technology) => (
+              <a
+                class="tooltip"
+                data-tip={technology.name}
+                href={technology.url}
+                target="_blank"
+              >
+                <figure>
+                  <img
+                    src={technology.img}
+                    alt={technology.name}
+                    class="w-6 h-6"
+                  />
+                </figure>
+              </a>
+            ))
+          }
+        </div>
+    </div>
+    <div class="flex justify-between gap-3">
+        <form method="dialog">
+          <button class="btn btn-info" tabindex="0">Cerrar</button>
+        </form>
+        <a href={url} target="_blank" class="btn btn-warning" tabindex="0">Ver</a>
+    </div>
+    </div>
+  </div>
+</dialog>

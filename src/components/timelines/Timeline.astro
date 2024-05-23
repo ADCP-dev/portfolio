@@ -1,7 +1,18 @@
 <div>
-  <div id="graph-ES" class="md:overflow-hidden overflow-x-scroll"></div>
-  <div id="graph-GS" class="md:overflow-hidden overflow-x-scroll"></div>
-  <div id="graph-GM" class="md:overflow-hidden overflow-x-scroll"></div>
+  <div class="flex justify-items-center align-middle flex-wrap">
+    <div>
+      <h1>GS -> IA</h1>
+      <div id="graph-ES" class="md:overflow-hidden overflow-x-scroll"></div>
+    </div>
+    <div>
+      <h1>GM -> GS</h1>
+      <div id="graph-GS" class="md:overflow-hidden overflow-x-scroll"></div>
+    </div>
+    <div>
+      <h1>ESO -> GM</h1>
+      <div id="graph-GM" class="md:overflow-hidden overflow-x-scroll"></div>
+    </div>
+  </div>
 </div>
 <script>
   import { createGitgraph, templateExtend } from "@gitgraph/js";
@@ -49,7 +60,7 @@
   gm.commit("2019 - Empezar GM");
 
   const hpCodewars = gitgraphGM.branch("HPcodewars");
-  hpCodewars.commit("Competición I").commit("Competición II");
+  hpCodewars.commit("Competición I HPcodewars").commit("Competición II HPcodewars");
 
   gm.merge(hpCodewars);
   gm.commit("2021 - Acabar GM");

@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 <template>
     <header class="fixed top-5 w-full px-1 z-50 md:px-5">
-        <div class="bg-gradient-to-r from-accent to-info text-accent-content navbar rounded-full px-5">
+        <div class="container mx-auto bg-gradient-to-r from-accent to-info text-accent-content navbar rounded-full px-5">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -46,7 +46,7 @@ onMounted(() => {
                         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-gradient-to-r from-accent to-info font-bold text-lg">
                         <li><a href="#home">Inicio</a></li>
                         <li><a href="#projects">Proyectos</a></li>
-                        <!-- <li><a href="#timeline">Linea de tiempo</a></li> -->
+                        <li><a href="#timeline">Timeline</a></li>
                         <li><a href="#contact">Contacto</a></li>
                         <!-- <li>
                             <a>Parent</a>
@@ -81,16 +81,16 @@ onMounted(() => {
                             </div>
                         </a>
                     </li>
-                    <!-- <li>
+                    <li>
                         <a href="#timeline">
                             <div class="font-bold group transition-all duration-300 ease-in-out text-black">
                                 <span
                                     class="hover:cursor-pointer bg-left-bottom bg-gradient-to-r from-black to-black bg-[length:0%_3px] bg-no-repeat group-hover:bg-[length:100%_3px] transition-all duration-500 ease-out">
-                                    Linea de tiempo
+                                    Timeline
                                 </span>
                             </div>
                         </a>
-                    </li> -->
+                    </li>
                     <li>
                         <a href="#contact">
                             <div class="font-bold group transition-all duration-300 ease-in-out text-black">
