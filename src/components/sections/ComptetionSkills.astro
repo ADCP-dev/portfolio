@@ -1,0 +1,102 @@
+---
+import SpainSkillsImg from "../../img/SpainSkills.jpeg";
+---
+<div>
+  <div class="text-3xl font-extrabold text-center md:text-left p-1">
+    <h1 class="text-center" onclick="balearSkillsModal.showModal()">
+      🥇
+      <span
+        class="text-center group transition-all duration-300 ease-in-out bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+      >
+        <span
+          class="hover:cursor-pointer
+          bg-left-bottom bg-gradient-to-r from-info to-accent bg-[length:0%_3px] bg-no-repeat group-hover:bg-[length:100%_3px] transition-all duration-500 ease-out text-3xl"
+        >
+          BalearSkills
+        </span>
+      </span>
+    </h1>
+  </div>
+  <div class="text-3xl font-extrabold text-center md:text-left p-1">
+    <h1 class="text-center" onclick="spainSkillsModal.showModal()">
+      🏅
+      <span
+        class="text-center group transition-all duration-300 ease-in-out bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
+      >
+        <span
+          class="hover:cursor-pointer
+        bg-left-bottom bg-gradient-to-r from-info to-accent bg-[length:0%_3px] bg-no-repeat group-hover:bg-[length:100%_3px] transition-all duration-500 ease-out text-3xl"
+        >
+          SpainSkills
+        </span>
+      </span>
+    </h1>
+  </div>
+</div>
+
+<dialog id="balearSkillsModal" class="modal">
+  <div class="modal-box bg-base-200" style="max-width: 1000px;">
+    <h3 class="font-bold text-2xl text-center">BalearSkills</h3>
+    <p class="py-4 text-justify text-gray-200 px-1 text-lg">
+      1ª Posición. Competición de aplicaciones web de las Islas Baleares de 6 h
+      de duración, en la cuales utilicé tecnologías como Laravel, Vue, Inertia y
+      Bootstrap 5. Consistía en hacer una aplicación desde el inicio hasta el
+      final (backend, frontend y diseño) la cual disfruté mucho porque se podía
+      demostrar lo que hacía un desarrollador de aplicaciones web.
+    </p>
+    <a
+      href="https://www.linkedin.com/feed/update/urn:li:activity:7071750992542756864/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7071750992542756864%29"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="flex justify-center items-center mt-2">
+        <img
+          src="https://media.licdn.com/dms/image/D4E22AQExL760c9x0dg/feedshare-shrink_2048_1536/0/1686036821694?e=1719446400&v=beta&t=_SygwDSzU8yEhrG5Lkm7Pb9V2254qialH6ez_r1bciE"
+          alt="BalearSkills"
+          class="w-2/3 rounded-lg"
+        />
+      </div>
+    </a>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn btn-info" tabindex="0">Cerrar</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+<dialog id="spainSkillsModal" class="modal">
+  <div class="modal-box bg-base-200" style="max-width: 1000px;">
+    <h3 class="font-bold text-2xl text-center">SpainSkills</h3>
+    <p class="py-4 text-justify text-gray-200 px-1">
+      4ª Posición. Competición de aplicaciones web de España con todas las
+      comunidades autónomas de 3 días de duración, en la cuales utilicé
+      tecnologías como Laravel, Vue, Canvas, Bootstrap 5. Consistía en hacer
+      ejercicios aislados, primer día un diseño, segundo una aplicación y tercer
+      un juego tradicional, el cual hice con canvas y js vanilla. Expresé mi
+      descontento como desarrollador web y profesional que la prueba no
+      reflejaba aplicaciones web, ya que no hicimos ningún producto real ni
+      pudimos enseñar algo al público, entre otras cosas. Lo mejor que me llevo
+      es la gente que conocí por el camino 🫶.
+    </p>
+    <a
+      href="https://es.linkedin.com/posts/adrian-colom-palacios_spainskills-activity-7195864385553080320-j5aV"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="flex justify-center items-center mt-2">
+        <img
+          src={SpainSkillsImg.src}
+          alt="SpainSkills"
+          class="w-2/3 rounded-lg"
+        />
+      </div>
+    </a>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn btn-info" tabindex="0">Cerrar</button>
+      </form>
+    </div>
+  </div>
+</dialog>

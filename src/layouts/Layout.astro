@@ -1,5 +1,5 @@
 ---
-import Navbar from "../components/Navbar.vue";
+import Navbar from "../components/sections/Navbar.vue";
 import portfolio from "../img/projects/portfolio.jpg";
 interface Props {
   title: string;
@@ -39,5 +39,10 @@ const { title } = Astro.props;
   }
   .scroll-margin-id {
     scroll-margin-top: 115px;
+  }
+
+  a:hover, a:active, a:focus {
+    outline: none;
+    border: 0;
   }
 </style>

@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 <template>
     <header class="fixed top-5 w-full px-1 z-50 md:px-5">
-        <div class="container mx-auto bg-gradient-to-r from-accent to-info text-accent-content navbar rounded-full px-5">
+        <div class="container mx-auto bg-gradient-to-r from-accent/85 to-info/85 text-accent-content navbar rounded-full px-5 backdrop-blur-sm">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -57,7 +57,7 @@ onMounted(() => {
                         </li> -->
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl">ACP</a>
+                <span class="btn btn-ghost text-xl">ADCP</span>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 font-bold text-lg">

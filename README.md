@@ -2,4 +2,6 @@
 
 Hecho con Astro, DaisyUI y Vue 3
 
-![imagen_projecto](https://raw.githubusercontent.com/CalaSanao/portfolio/master/public/projects/portfolio.jpg)
+El timeline esta hecho con gitgraph.js
+
+![imagen_projecto](https://raw.githubusercontent.com/ADCP-dev/portfolio/master/public/projects/portfolio.jpg)

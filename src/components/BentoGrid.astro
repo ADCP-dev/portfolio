@@ -5,14 +5,15 @@ import WebFrontTecnologiesItems from "./tecnologies/web/WebFrontTecnologiesItems
 import WebUtilsTecnologiesItems from "./tecnologies/web/WebUtilsTecnologiesItems";
 import IATecnologiesItems from "./tecnologies/IATecnologiesItems.js";
 import Timeline from "./timelines/Timeline.astro";
-import Email from "./Email.astro";
-import WorkingAs from "./WorkingAs.astro";
-import Hero from "./Hero.astro";
+import Email from "./sections/Email.astro";
+import WorkingAs from "./sections/WorkingAs.astro";
+import Hero from "./sections/Hero.astro";
 import Projects from "./project/Projects.astro";
 
 const email = "adriancolomp@gmail.com";
 
 import spainImage from "../img/spain.svg";
+import ComptetionSkills from "./sections/ComptetionSkills.astro";
 
 const boxStyleClass =
   "rounded-3xl p-8 hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500 items-center justify-around -inset-1 bg-gradient-to-b from-base-100 to-base-300";
@@ -136,28 +137,7 @@ const years = (new Date().getFullYear() - 2003).toString();
       <section
         class=`col-span-1 md:col-span-3 md:row-span-1 md:col-start-7 md:row-start-5 ${boxStyleClass} flex items-center justify-center`
       >
-        <div>
-          <div class="text-3xl font-extrabold text-center md:text-left p-1">
-            <h1 class="text-center">
-              🥇
-              <span
-                class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
-              >
-                BalearSkills
-              </span>
-            </h1>
-          </div>
-          <div class="text-3xl font-extrabold text-center md:text-left p-1">
-            <h1 class="text-center">
-              🏅
-              <span
-                class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info"
-              >
-              SpainSkills
-              </span>
-            </h1>
-          </div>
-        </div>
+        <ComptetionSkills />
       </section>
 
       <!-- ANCHOR Sección de Estudiante -->

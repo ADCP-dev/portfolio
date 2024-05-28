@@ -1,17 +1,15 @@
-<div>
-  <div class="flex justify-items-center align-middle flex-wrap">
-    <div>
-      <h1>GS -> IA</h1>
-      <div id="graph-ES" class="md:overflow-hidden overflow-x-scroll"></div>
-    </div>
-    <div>
-      <h1>GM -> GS</h1>
-      <div id="graph-GS" class="md:overflow-hidden overflow-x-scroll"></div>
-    </div>
-    <div>
-      <h1>ESO -> GM</h1>
-      <div id="graph-GM" class="md:overflow-hidden overflow-x-scroll"></div>
-    </div>
+<div class="flex justify-items-center justify-around align-middle flex-wrap">
+  <div class="md:overflow-hidden overflow-x-scroll" style="max-width: 500px;">
+    <h1>GS -> IA</h1>
+    <div id="graph-ES"></div>
+  </div>
+  <div class="md:overflow-hidden overflow-x-scroll" style="max-width: 500px;">
+    <h1>GM -> GS</h1>
+    <div id="graph-GS"></div>
+  </div>
+  <div class="md:overflow-hidden overflow-x-scroll" style="max-width: 500px;">
+    <h1>ESO -> GM</h1>
+    <div id="graph-GM"></div>
   </div>
 </div>
 <script>
@@ -60,10 +58,24 @@
   gm.commit("2019 - Empezar GM");
 
   const hpCodewars = gitgraphGM.branch("HPcodewars");
-  hpCodewars.commit("Competición I HPcodewars").commit("Competición II HPcodewars");
+  hpCodewars
+    .commit({
+      subject: "Competición I HPcodewars >",
+      onClick: () => (document.getElementById("modal_HPcodewars_I").open = true),
+      onMessageClick: () => (document.getElementById("modal_HPcodewars_I").open = true),
+    })
+    .commit({
+      subject: "Competición II HPcodewars >",
+      onClick: () => (document.getElementById("modal_HPcodewars_II").open = true),
+      onMessageClick: () => (document.getElementById("modal_HPcodewars_II").open = true),
+    });
 
   gm.merge(hpCodewars);
-  gm.commit("2021 - Acabar GM");
+  gm.commit({
+    subject: "2021 - Acabar GM >",
+    onClick: () => (document.getElementById("modal_GM").open = true),
+    onMessageClick: () => (document.getElementById("modal_GM").open = true),
+  });
   master.merge(gm);
 
   // GS
@@ -75,14 +87,26 @@
   gs.commit("2021 - Empezar GS");
 
   const BalearSkills = gs.branch("BalearSkills");
-  BalearSkills.commit("Competición BalearSkills");
+  BalearSkills.commit({
+    subject: "Competición BalearSkills >",
+    onClick: () => (document.getElementById("balearSkillsModal").open = true),
+    onMessageClick: () => (document.getElementById("balearSkillsModal").open = true),
+  });
 
   const appAdmin = gs.branch("AppAdmin");
-  appAdmin.commit("2023 - Empezar AppAdmin");
+  appAdmin.commit({
+    subject: "2023 - Empezar AppAdmin >",
+    onClick: () => (document.getElementById("Administracion academia de música").open = true),
+    onMessageClick: () => (document.getElementById("Administracion academia de música").open = true),
+  });
 
   gs.merge(BalearSkills);
 
-  gs.commit("2023 - Acabar GS");
+  gs.commit({
+    subject: "2023 - Acabar GS >",
+    onClick: () => (document.getElementById("modal_GS").open = true),
+    onMessageClick: () => (document.getElementById("modal_GS").open = true),
+  });
 
   master2.merge(gs);
 
@@ -94,12 +118,23 @@
   const ia = gitgraphES.branch("IA");
   ia.commit("2023 - Empezar IA");
 
-  const spain = gitgraphES.branch("SpainSkills");
-  spain.commit("2024 - Competición SpainSkills");
+  const c2t = ia.branch("C2T");
+  c2t.commit({
+    subject: "2023 - Empezar trabajo en C2T",
+    onClick: () => (document.getElementById("workingAsModal").open = true),
+    onMessageClick: () => (document.getElementById("workingAsModal").open = true),
+  });
+
+  const spain = ia.branch("SpainSkills");
+  spain.commit({
+    subject: "2024 - Competición SpainSkills >",
+    onClick: () => (document.getElementById("spainSkillsModal").open = true),
+    onMessageClick: () => (document.getElementById("spainSkillsModal").open = true),
+  });
 
   ia.merge(spain);
   ia.commit({
-    subject: "2024 - Acabar IA",
+    subject: "2024 - Acabar IA >",
     onClick: () => (document.getElementById("modal_IA").open = true),
     onMessageClick: () => (document.getElementById("modal_IA").open = true),
   });
@@ -107,9 +142,30 @@
   master3.merge(ia);
 </script>
 <style is:global>
-  /* "Acabar IA" */
-  #graph-ES > svg > g > g:nth-child(2) > g:nth-child(5) > g:nth-child(2) > g:nth-child(1) > text:hover {
+  /* 
+  "Acabar IA"
+  SpainSkills
+  C2T
+  GS
+  AppAdmin
+  BalearSkills
+  GM
+  Codewars I
+  Codewars II
+  */
+  #graph-ES > svg > g > g:nth-child(2) > g:nth-child(6) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-ES > svg > g > g:nth-child(2) > g:nth-child(4) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-ES > svg > g > g:nth-child(2) > g:nth-child(3) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-GS > svg > g > g:nth-child(2) > g:nth-child(6) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-GS > svg > g > g:nth-child(2) > g:nth-child(4) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-GS > svg > g > g:nth-child(2) > g:nth-child(3) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-GS > svg > g > g:nth-child(2) > g:nth-child(3) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-GM > svg > g > g:nth-child(2) > g:nth-child(6) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-GM > svg > g > g:nth-child(2) > g:nth-child(4) > g:nth-child(2) > g:nth-child(1) > text:hover,
+  #graph-GM > svg > g > g:nth-child(2) > g:nth-child(3) > g:nth-child(2) > g > text:hover
+  {
     cursor: pointer;
     text-decoration: underline;
   }
+  
 </style>

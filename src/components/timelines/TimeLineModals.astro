@@ -2,23 +2,35 @@
 import { TimeLineProps } from "./TimeLineData";
 ---
 
-<div>
-  {
-    TimeLineProps.map((modal) => (
-      <dialog id={modal.id} class="modal">
-        <div class="modal-box bg-base-200">
-          <h3 class="font-bold text-xl text-center">{modal.title}</h3>
-          <p class="py-4 text-center">{modal.description}</p>
+{
+  TimeLineProps.map((modal) => (
+    <dialog id={modal.id} class="modal">
+      <div class="modal-box bg-base-200" style="max-width: 1000px;">
+        <h3 class="font-bold text-2xl p-3 text-center text-gray-200">
+          {modal.title}
+        </h3>
+        <p class="py-2 text-center">{modal.description}</p>
 
-          <div class="modal-action">
-            <form method="dialog">
-              <button class="btn btn-info" tabindex="0">
-                Cerrar
-              </button>
-            </form>
-          </div>
+        {modal.img && (
+          <a href={modal.url} target="_blank" rel="noopener noreferrer">
+            <div class="flex justify-center items-center">
+              <img
+                src={modal.img}
+                alt={modal.title}
+                class="w-2/3 rounded-lg"
+              />
+            </div>
+          </a>
+        )}
+
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn btn-info" tabindex="0">
+              Cerrar
+            </button>
+          </form>
         </div>
-      </dialog>
-    ))
-  }
-</div>
+      </div>
+    </dialog>
+  ))
+}

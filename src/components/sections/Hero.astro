@@ -1,10 +1,10 @@
 ---
-import LinkedinIcon from "./icons/LinkedinIcon.astro";
-import GithubIcon from "./icons/GithubIcon.astro";
-import DownloadFileIcon from "./icons/DownloadFileIcon.astro";
+import LinkedinIcon from "../icons/LinkedinIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import DownloadFileIcon from "../icons/DownloadFileIcon.astro";
 
 const url = {
-  github: "https://github.com/colom-palacios",
+  github: "https://github.com/ADCP-dev",
   linkedin: "https://www.linkedin.com/in/adrian-colom-palacios/",
   cv: "",
 };
@@ -48,16 +48,16 @@ const url = {
 
   <div class="flex justify-center md:justify-start mt-2 gap-2 ml-2 items-center">
     <a
-      class="mt-1 btn btn-sm bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:scale-110 duration-200"
+      class="mt-1 btn btn-sm bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:scale-105 duration-200"
       href={url.cv}
     >
       C.V
       <DownloadFileIcon />
     </a>
-    <a href={url.linkedin} target="_blank" rel="noopener noreferrer" class="mt-1">
+    <a href={url.linkedin} target="_blank" rel="noopener noreferrer" class="mt-1 hover:scale-110 duration-200">
       <LinkedinIcon />
     </a>
-    <a href={url.github} target="_blank" rel="noopener noreferrer" class="mt-1">
+    <a href={url.github} target="_blank" rel="noopener noreferrer" class="mt-1 hover:scale-110 duration-200">
       <GithubIcon />
     </a>
   </div>
