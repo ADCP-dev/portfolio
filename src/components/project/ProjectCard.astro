@@ -19,15 +19,17 @@ const {
 ---
 
 <figure>
-  <div class="card-preview" onclick={`document.getElementById('${title}').showModal()`} >
+  <div class={video ? "card-preview" : ""} onclick={video ? `document.getElementById('${title}').showModal()` : ''} >
     <img
       src={img ??
         "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"}
       alt={title}
     />
+    {video && 
     <video autoplay loop muted playsinline>
       <source src={video} type="video/mp4"/>
     </video>
+    }
   </div>
 </figure>
 <div class="card-body">
@@ -66,7 +68,7 @@ const {
   </div>
   <div class="indicator absolute md:left-9 left-20 bottom-[4.2rem]">
     <span class="indicator-item badge badge-accent font-bold"
-      >{dateStart}{"->"}{dateEnd ?? "Presente"}</span
+      >{dateStart}{dateEnd ? "->" + dateEnd : ""}{}</span
     >
   </div>
   <div
@@ -78,7 +80,7 @@ const {
       {workingAt ? "En desarrollo" : "Finalizado"}
     </span>
   </div>
-  <ProjectCardModal title={title} video={video} description={description} technologies={technologies} url={url} />
+  <ProjectCardModal title={title} video={video} description={description} technologies={technologies} url={url} img={img} />
 </div>
 
 <style>

@@ -9,10 +9,10 @@ export interface ProjectProps {
   description: string;
   technologies: Technology[];
   dateStart: string;
-  dateEnd: string;
+  dateEnd?: string;
   workingAt: boolean;
   url: string;
   img: string;
   public: boolean;
-  video: string;
+  video?: string;
 }
