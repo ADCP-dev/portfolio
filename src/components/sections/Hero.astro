@@ -2,11 +2,11 @@
 import LinkedinIcon from "../icons/LinkedinIcon.astro";
 import GithubIcon from "../icons/GithubIcon.astro";
 import DownloadFileIcon from "../icons/DownloadFileIcon.astro";
+import CV from "../../img/CV.pdf";
 
 const url = {
   github: "https://github.com/ADCP-dev",
   linkedin: "https://www.linkedin.com/in/adrian-colom-palacios/",
-  cv: "",
 };
 ---
 
@@ -23,7 +23,7 @@ const url = {
   <img
     src="https://media.licdn.com/dms/image/D4D03AQFLlS45fTapug/profile-displayphoto-shrink_200_200/0/1715799113039?e=2147483647&v=beta&t=uu5H3w69SMeZlTqzK2SNJlUzqzFxONWT8q80BpfFzu4"
     alt="Foto de perfil"
-    class="w-32 h-32 md:w-48 md:h-auto object-cover mask mask-squircle mb-4 md:mb-0"
+    class="w-auto h-auto object-cover mask mask-squircle mb-4 md:mb-0"
   />
 </div>
 
@@ -49,7 +49,7 @@ const url = {
   <div class="flex justify-center md:justify-start mt-2 gap-2 ml-2 items-center">
     <a
       class="mt-1 btn btn-sm bg-gradient-to-r from-accent to-info text-black font-bold rounded-full hover:scale-105 duration-200"
-      href={url.cv}
+      href={CV} download="Adrian_Colom_CV.pdf"
     >
       C.V
       <DownloadFileIcon />
