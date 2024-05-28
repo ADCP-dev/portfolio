@@ -19,18 +19,8 @@ const { boxStyleClass } = Astro.props;
   <ProjectCard {...projects[1]} />
 </article>
 
-<article class=`col-span-1 md:col-span-4 md:col-start-9 flex ${boxStyleClass}`>
-  <div class="text-3xl font-extrabold">
-    <div class="indicator">
-      <p class="text-center">
-        <span
-          class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-info animate-[pulse_5s_ease-in-out_infinite]"
-        >
-          Próximamente
-        </span>
-      </p>
-    </div>
-  </div>
+<article class=`col-span-1 md:col-span-4 md:col-start-9 shadow-lg rounded-3xl bg-gradient-to-b from-base-100 to-base-200 card hover:shadow-[5px_5px_0px_0px] hover:shadow-info duration-500`>
+  <ProjectCard {...projects[2]} />
 </article>
 
 <!-- <section
