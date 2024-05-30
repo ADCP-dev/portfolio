@@ -82,7 +82,7 @@ export const projects : ProjectProps[] = [
         },
       ],
       dateStart: "2024 Jan.",
-      dateEnd: "2024 May.",
+      dateEnd: "May.",
       workingAt: false,
       url: "https://github.com/ADCP-dev/portfolio",
       img: portfolio.src,
