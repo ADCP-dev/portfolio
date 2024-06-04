@@ -12,6 +12,7 @@ import grafana from '../../img/tecnologies/IA/grafana.png';
 
 
 export default [
+  { name: 'Python', img: python.src, url: "https://python.org" },
   { name: 'Numpy', img: numpy.src, url: "https://numpy.org" },
   { name: 'Pandas', img: pandas.src, url: "https://pandas.pydata.org" },
   { name: 'Tensorflow', img: tensorflow.src, url: "https://www.tensorflow.org" },
