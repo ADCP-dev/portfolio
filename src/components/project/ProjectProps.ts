@@ -11,7 +11,7 @@ export interface ProjectProps {
   dateStart: string;
   dateEnd?: string;
   workingAt: boolean;
-  url: string;
+  url?: string;
   img: string;
   public: boolean;
   video?: string;

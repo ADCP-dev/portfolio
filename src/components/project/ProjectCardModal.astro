@@ -44,11 +44,13 @@ const { title, description, technologies, video, url, img } = Astro.props;
           }
         </div>
     </div>
-    <div class="flex justify-between gap-3">
+    <div class="flex justify-between items-center  gap-3">
         <form method="dialog">
           <button class="btn btn-info" tabindex="0">Cerrar</button>
         </form>
-        <a href={url} target="_blank" class="btn btn-warning" tabindex="0">Ver</a>
+        {url && (
+          <a href={url} target="_blank" class="btn btn-warning" tabindex="0">Ver</a>
+        )}
     </div>
     </div>
   </div>

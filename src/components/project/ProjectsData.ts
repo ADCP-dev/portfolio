@@ -51,7 +51,6 @@ export const projects : ProjectProps[] = [
       dateStart: "2023 Apr.",
       dateEnd: "Presente",
       workingAt: true,
-      url: "https://adcpprojects.com/",
       img: a2cp.src,
       public: false,
       video: a2cpVideo 
